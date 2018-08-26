@@ -1,6 +1,7 @@
 # Rapid Roll Lite 1.0
 # By Arnob Paul
-# This source code can be used in any product (both free and commercial)
+# https://arnobpl.github.io
+# arnobpl@gmail.com
 
 
 # The following values are game settings
@@ -97,7 +98,7 @@ def lerp(value, start, stop, step):
 
 ERROR = 0
 try:
-    print('\nPress ESC to exit the game...')
+    print("\nPress ESC to exit the game...")
     from time import sleep
 
     sleep(1)
@@ -106,6 +107,7 @@ try:
 
     import os
     import sys
+
     data_directory_full_path = os.path.join(sys.path[0], data_directory_name)
 
     import pygame
@@ -121,9 +123,9 @@ try:
         screen = pygame.display.set_mode((Screen_Width, Screen_Height), FULLSCREEN | HWSURFACE | DOUBLEBUF | NOFRAME)
     else:
         if Screen_Center:
-            os.environ['SDL_VIDEO_CENTERED'] = "1"
+            os.environ["SDL_VIDEO_CENTERED"] = "1"
         else:
-            exec("os.environ['SDL_VIDEO_WINDOW_POS'] = " + "\"" + str(Screen_Left) + "," + str(Screen_Top) + "\"")
+            os.environ["SDL_VIDEO_WINDOW_POS"] = "\"" + str(Screen_Left) + "," + str(Screen_Top) + "\""
         screen = pygame.display.set_mode((Screen_Width, Screen_Height), HWSURFACE | DOUBLEBUF | NOFRAME)
 
     ERROR = 1
@@ -147,7 +149,7 @@ except Exception as exception:
         pygame.quit()
     except:
         pass
-    print("\n" * 150 + "Fatal Error!")
+    print('\n' * 150 + "Fatal Error!")
     print(exception)
 
     if ERROR == 0:
@@ -159,7 +161,7 @@ except Exception as exception:
     elif ERROR == 3:
         print("\"" + sprite_data_file_name + "\" file is missing or invalid.")
 
-    print("\n Support: arnobpl@gmail.com\n\n https://arnobpl.github.io\n\n\nPress ENTER to exit..." + "\n" * 8)
+    print("\n Support: arnobpl@gmail.com\n\n https://arnobpl.github.io\n\n\nPress ENTER to exit..." + '\n' * 8)
     input()
 
 if ERROR == 0:
@@ -571,7 +573,7 @@ if ERROR == 0:
         if life_items_gain < 0 and (not ball_crashed):
             pygame.quit()
             print("Game is over!\nYour score is " + str(
-                round(score * 0.1)) + ".\nThank you for playing this mini-game.\n\n\nPress ENTER to exit..." + "\n" * 8)
+                round(score * 0.1)) + ".\nThank you for playing this mini-game.\n\n\nPress ENTER to exit..." + '\n' * 8)
             input()
             break
 
